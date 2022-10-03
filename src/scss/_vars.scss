@@ -1,0 +1,13 @@
+$white: #FFFFFF;
+$baseColorText: #2C4058;
+
+@mixin flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin font($fw, $fz, $lh) {
+    font-weight: $fw;
+    font-size: $fz;
+    line-height: $lh;
+}

@@ -1,0 +1,69 @@
+@import 'vars';
+
+.slick-dots {
+    li {
+        margin: 0; 
+
+        button {
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            border-radius: 50%;
+            border: 1px solid $white;
+            box-sizing: border-box; 
+            transition: all 0.9s ease; 
+
+            &:hover {
+                background-color: $white;
+            }
+
+            &::before {
+                content: '';
+            }
+        }
+    }
+
+    li.slick-active  button { 
+        background-color: $white; 
+    }
+
+    li:not(li:last-child) {
+        margin-right: 40px;
+    }
+}
+
+.hero__slider {
+    .slick-dots {
+        position: absolute;
+        bottom: 0;
+        right: -52px;
+        transform: rotate(90deg);
+        width: fit-content;
+    }
+}
+
+.slick-slider .slick-list, 
+.slick-slider .slick-track {
+    display: flex;
+}
+
+.prev_arrow, .next_arrow {
+    position: absolute;
+    top: 50%; 
+    color: #FFFFFF;
+}
+
+.prev_arrow {
+    left: -100px;
+}
+
+.next_arrow {
+    right: -100px;
+}
+
+.news__list { 
+    .slick-dots {
+        bottom: -40px;
+        transform: translateY(30px);
+    }
+}
