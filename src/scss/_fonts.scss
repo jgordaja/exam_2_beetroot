@@ -6,15 +6,15 @@
 //icomoon
 @font-face {
     font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?76tvjv');
-    src:  url('../fonts/icomoon.eot?76tvjv#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?76tvjv') format('truetype'),
-      url('../fonts/icomoon.woff?76tvjv') format('woff'),
-      url('../fonts/icomoon.svg?76tvjv#icomoon') format('svg');
+    src:  url('../fonts/icomoon.eot?egmm3a');
+    src:  url('../fonts/icomoon.eot?egmm3a#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?egmm3a') format('truetype'),
+      url('../fonts/icomoon.woff?egmm3a') format('woff'),
+      url('../fonts/icomoon.svg?egmm3a#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
-  }
+    font-display: block; 
+}
   
   [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -34,6 +34,9 @@
   .icon-glass:before {
     content: "\e90a";
     color: #fff;
+  }
+  .icon-chevron-up:before {
+    content: "\e90b";
   }
   .icon-chevron-small-right:before {
     content: "\e900";

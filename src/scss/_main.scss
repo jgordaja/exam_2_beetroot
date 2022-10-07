@@ -18,12 +18,13 @@
 }
 
 .hero {
-    height: 100vh;
-    // виглядає погано. не дивлячись на прозорість і т.ін.
-    // background-image: linear-gradient(243.43deg, rgba(126, 90, 255, 0.8) 16.9%, rgba(85, 183, 255, 0.8) 83.27%),
-    //     url('../img/hero/hero_bg.webp');
-    // склеїла картинку з градієнтом - вийшло як на макеті
-    background: url('../img/hero/hero_bg_and_gradient.webp') center / cover no-repeat;
+    height: 100vh; 
+    width: 100%;
+    background-image: url('../img/hero/hero_bg.png'), 
+        linear-gradient(243.43deg, rgb(126, 90, 255) 16.9%, rgb(85, 183, 255) 83.27%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     color: $white;
     position: relative;
     margin-bottom: 100px;
@@ -36,22 +37,14 @@
     text-align: center; 
 }
 
-// .hero__slider {
-
-// }
-
 .hero__slider_title {
     font-size: 80px;
     line-height: 98px; 
     text-align: center;
-    letter-spacing: 0.1em;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // width: 100vw;
-    // height: 100vh;
-    // transform: translate(-50%, -50%); 
-    padding: 220px 0 0 0;
+    letter-spacing: 0.1em; 
+    height: 50vh;
+    transform: translateY(50%); 
+    // padding: 25vh 0 0 0;
 }
 
 .hero__slider_subtitle {
@@ -61,13 +54,18 @@
     margin-top: 20px;
 }
 
-.header__nav {
+.header__nav, .footer__nav {
     @include flex;
     padding-top: 53px;
     align-items: center;
 }
 
-.heder__menu, .heder__socials {
+.header__logo, .footer__logo {
+    max-width: 241px;
+}
+
+.heder__menu, .heder__socials,
+.footer__socials {
     @include flex;
 }
 
@@ -105,7 +103,7 @@
     }
 }
 
-.heder__socials { 
+.heder__socials, .footer__socials { 
     .socials__item:not(.socials__item:last-child) {
         margin-right: 20px; 
     }
@@ -144,6 +142,7 @@
     font-size: 44px;
     line-height: 54px; 
     padding-top: 30px;
+    color: $baseColorText;
     position: relative;
 
     &::before {
@@ -284,8 +283,13 @@
     position: relative;
 }
 
-.news {
-    background: url(../img/news/news_bg.webp) center / cover no-repeat;
+.news { 
+    background-image: url('../img/news/news_bg.png'), 
+        linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: bottom;
     padding-top: 120px;
     padding-bottom: 170px;
     margin-bottom: 150px;
@@ -445,3 +449,136 @@
     height: 700px;
     width: 100%;
 }
+
+.contact {
+    position: relative;
+}
+
+.contact__form {
+    max-width: 770px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 60px 70px 60px;
+
+    .contact__title {
+        margin-bottom: 42px; 
+    }
+
+    .contact__inner {
+        @include flex;
+        color: #000000;
+    }
+}
+
+.contacts {
+    font-family: 'Montserrat', sans-serif;
+
+    .contacts__item {
+        @include font(400, 18px, 28px);
+
+        &:not(.contacts__item:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .icon {
+            color: #7E5AFF;
+            margin-right: 10px;
+        }
+    }
+}
+
+.contact__form {
+    background-image: url('../img/contact/form_bg.png'); 
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-x: center;
+    background-position-y: bottom; 
+    position: absolute;
+    bottom: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .form input {
+        display: block;
+        width: 310px; 
+        margin-bottom: 30px;
+        padding: 0;
+        padding-bottom: 14px;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid rgba(44, 64, 88, .8);
+        background-color: #FFFFFF;
+        font-family: 'Montserrat', sans-serif;
+        @include font(400, 18px, 27px);
+
+        &:focus { 
+            border-bottom: 1px solid rgba(44, 64, 88, 1); 
+        }
+    }
+
+    .btn {
+        display: block;
+        padding: 11px 34px;
+        margin-right: 0;
+        margin-left: auto;
+        margin-bottom: 0;
+        width: fit-content;
+        @include font(400, 18px, 27px);
+    }
+}
+
+.footer { 
+    background-image: url('../img/footer/footer_bg.png'), 
+        linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: $white;
+
+    .footer__nav {
+        padding: 0;
+        margin-bottom: 41px;
+    }
+
+    .footer_container {
+        max-width: 770px;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 203px;
+        padding-bottom: 234px;
+    }
+
+    .copy {
+        font-family: 'Montserrat', sans-serif; 
+        @include font(400, 14px, 17px); 
+    } 
+}
+
+.top {
+	position: fixed;
+	bottom: 25px;
+	background-color: $baseColorText;
+	border-radius: 10em;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 26px;
+	width: 50px;
+	height: 50px;
+	line-height: 56px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.8s ease;
+	right: -100px;
+	z-index: 2;
+	opacity: 0.6;
+
+	&.active {
+        right: 30px;
+    }
+		
+	&:hover {
+		color: #fff;
+		background-color: $baseColorText;
+		opacity: 1;
+    }
+} 

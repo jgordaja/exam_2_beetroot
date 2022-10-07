@@ -11,10 +11,7 @@ $(document).ready(function() {
         arrows: false, 
         swipe: true, 
         mobileFirst: true, 
-        dots: true,
-        // vertical: true,
-        // verticalSwiping: true,
-        // rtl: true,
+        dots: true, 
     });
 
     $('.news__list').slick({ 

@@ -30,8 +30,8 @@ img {
 
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon.eot?76tvjv");
-  src: url("../fonts/icomoon.eot?76tvjv#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?76tvjv") format("truetype"), url("../fonts/icomoon.woff?76tvjv") format("woff"), url("../fonts/icomoon.svg?76tvjv#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?egmm3a");
+  src: url("../fonts/icomoon.eot?egmm3a#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?egmm3a") format("truetype"), url("../fonts/icomoon.woff?egmm3a") format("woff"), url("../fonts/icomoon.svg?egmm3a#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -53,6 +53,10 @@ img {
 .icon-glass:before {
   content: "\e90a";
   color: #fff;
+}
+
+.icon-chevron-up:before {
+  content: "\e90b";
 }
 
 .icon-chevron-small-right:before {
@@ -115,7 +119,12 @@ img {
 
 .hero {
   height: 100vh;
-  background: url("../img/hero/hero_bg_and_gradient.webp") center/cover no-repeat;
+  width: 100%;
+  background-image: url("../img/hero/hero_bg.png"), -o-linear-gradient(206.57deg, rgb(126, 90, 255) 16.9%, rgb(85, 183, 255) 83.27%);
+  background-image: url("../img/hero/hero_bg.png"), linear-gradient(243.43deg, rgb(126, 90, 255) 16.9%, rgb(85, 183, 255) 83.27%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: #FFFFFF;
   position: relative;
   margin-bottom: 100px;
@@ -133,7 +142,10 @@ img {
   line-height: 98px;
   text-align: center;
   letter-spacing: 0.1em;
-  padding: 220px 0 0 0;
+  height: 50vh;
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
 }
 
 .hero__slider_subtitle {
@@ -145,7 +157,7 @@ img {
   margin-top: 20px;
 }
 
-.header__nav {
+.header__nav, .footer__nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,7 +170,12 @@ img {
           align-items: center;
 }
 
-.heder__menu, .heder__socials {
+.header__logo, .footer__logo {
+  max-width: 241px;
+}
+
+.heder__menu, .heder__socials,
+.footer__socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,7 +216,7 @@ img {
   background-color: #FFFFFF;
 }
 
-.heder__socials .socials__item:not(.socials__item:last-child) {
+.heder__socials .socials__item:not(.socials__item:last-child), .footer__socials .socials__item:not(.socials__item:last-child) {
   margin-right: 20px;
 }
 
@@ -242,6 +259,7 @@ img {
   font-size: 44px;
   line-height: 54px;
   padding-top: 30px;
+  color: #2C4058;
   position: relative;
 }
 .section__title::before {
@@ -399,7 +417,12 @@ img {
 }
 
 .news {
-  background: url(../img/news/news_bg.webp) center/cover no-repeat;
+  background-image: url("../img/news/news_bg.png"), -o-linear-gradient(212.9deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+  background-image: url("../img/news/news_bg.png"), linear-gradient(237.1deg, #24CCFA 11.16%, #3C7FD4 89.18%);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-x: center;
+  background-position-y: bottom;
   padding-top: 120px;
   padding-bottom: 170px;
   margin-bottom: 150px;
@@ -561,6 +584,145 @@ img {
   width: 100%;
 }
 
+.contact {
+  position: relative;
+}
+
+.contact__form {
+  max-width: 770px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 60px 70px 60px;
+}
+.contact__form .contact__title {
+  margin-bottom: 42px;
+}
+.contact__form .contact__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #000000;
+}
+
+.contacts {
+  font-family: "Montserrat", sans-serif;
+}
+.contacts .contacts__item {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+.contacts .contacts__item:not(.contacts__item:last-child) {
+  margin-bottom: 30px;
+}
+.contacts .contacts__item .icon {
+  color: #7E5AFF;
+  margin-right: 10px;
+}
+
+.contact__form {
+  background-image: url("../img/contact/form_bg.png");
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position-x: center;
+  background-position-y: bottom;
+  position: absolute;
+  bottom: -150px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.contact__form .form input {
+  display: block;
+  width: 310px;
+  margin-bottom: 30px;
+  padding: 0;
+  padding-bottom: 14px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(44, 64, 88, 0.8);
+  background-color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+.contact__form .form input:focus {
+  border-bottom: 1px solid rgb(44, 64, 88);
+}
+.contact__form .btn {
+  display: block;
+  padding: 11px 34px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.footer {
+  background-image: url("../img/footer/footer_bg.png"), -o-linear-gradient(198.94deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+  background-image: url("../img/footer/footer_bg.png"), linear-gradient(251.06deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF;
+}
+.footer .footer__nav {
+  padding: 0;
+  margin-bottom: 41px;
+}
+.footer .footer_container {
+  max-width: 770px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 203px;
+  padding-bottom: 234px;
+}
+.footer .copy {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.top {
+  position: fixed;
+  bottom: 25px;
+  background-color: #2C4058;
+  border-radius: 10em;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 26px;
+  width: 50px;
+  height: 50px;
+  line-height: 56px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  right: -100px;
+  z-index: 2;
+  opacity: 0.6;
+}
+.top.active {
+  right: 30px;
+}
+.top:hover {
+  color: #fff;
+  background-color: #2C4058;
+  opacity: 1;
+}
+
 .slick-dots li {
   margin: 0;
 }
@@ -591,7 +753,7 @@ img {
 
 .hero__slider .slick-dots {
   position: absolute;
-  bottom: 0;
+  bottom: 100px;
   right: -52px;
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
